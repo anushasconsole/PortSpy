@@ -1,0 +1,10 @@
+{
+    "range": {
+        "low": "1",
+        "high": "10000"
+    },
+    "thread": {
+        "count": "4"
+    },
+    "timeout": "0.1"
+} 
