@@ -1,0 +1,24 @@
+{
+  "name": "portscanner",
+  "version": "1.0.0",
+  "description": "A basic port scanner",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "keywords": [
+    "port",
+    "scanner",
+    "python",
+    "node"
+  ],
+  "author": "ANUSHA",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anushasconsole/PortSpy.git"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

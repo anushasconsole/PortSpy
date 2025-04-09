@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortSpy - Advanced Port Scanner & File Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> PortSpy</h1>
+            <p>Advanced port scanning and secure file management system</p>
+        </header>
+
+        <main>
+            <div class="scanner-form">
+                <h2><i class="fas fa-search"></i> Port Scanner</h2>
+                <div class="input-group">
+                    <label for="host">Target Host</label>
+                    <input type="text" id="host" placeholder="Enter host (e.g., localhost or 192.168.1.5)" required>
+                </div>
+                
+                <div class="port-range">
+                    <div class="input-group">
+                        <label for="portLow">Starting Port</label>
+                        <input type="number" id="portLow" value="1" min="1" max="65535" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="portHigh">Ending Port</label>
+                        <input type="number" id="portHigh" value="10000" min="1" max="65535" required>
+                    </div>
+                </div>
+
+                <button id="scanButton">
+                    <i class="fas fa-play"></i> Start Scan
+                </button>
+            </div>
+
+            <div class="results-container">
+                <h2><i class="fas fa-list"></i> Scan Results</h2>
+                <div id="scanningStatus" class="status">
+                    <i class="fas fa-info-circle"></i> Ready to scan
+                </div>
+                <div id="results" class="results"></div>
+                <div id="scanTime" class="scan-time"></div>
+            </div>
+            
+            <div class="file-browser-container">
+                <h2><i class="fas fa-folder-open"></i> File Browser</h2>
+                <div class="file-browser-controls">
+                    <div class="input-group">
+                        <label for="selectedPort">Select Port</label>
+                        <select id="selectedPort" disabled>
+                            <option value="">-- Select an Open Port --</option>
+                        </select>
+                    </div>
+                    <button id="connectButton" disabled>
+                        <i class="fas fa-plug"></i> Connect
+                    </button>
+                </div>
+                <div id="fileBrowserStatus" class="status">
+                    <i class="fas fa-info-circle"></i> Select a port to connect
+                </div>
+                <div id="fileList" class="file-list"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

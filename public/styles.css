@@ -1,0 +1,230 @@
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #6c757d;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary-color), #6a11cb);
+    color: white;
+    border-radius: var(--border-radius);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+main {
+    display: grid;
+    gap: 15px;
+}
+
+.scanner-form, .results-container, .file-browser-container {
+    background: var(--card-background);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.port-range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: auto;
+    display: inline-block;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+.status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.port-item {
+    padding: 8px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: white;
+}
+
+.port-open {
+    background-color: var(--success-color);
+}
+
+.port-closed {
+    background-color: var(--danger-color);
+}
+
+.port-selected {
+    border: 2px solid var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.file-browser-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.file-browser-controls .input-group {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.file-list-container {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 8px;
+}
+
+.file-name {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.download-button {
+    background-color: var(--success-color);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+.download-button:hover {
+    opacity: 0.9;
+}
+
+.no-files {
+    text-align: center;
+    padding: 20px;
+    color: var(--secondary-color);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.scan-time {
+    text-align: right;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .port-range {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 5px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
